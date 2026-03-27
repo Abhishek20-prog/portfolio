@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhishek-UI Forge</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- NAV -->
+    <div class="nav">
+        <img src="icon-removebg-preview.png" alt="logo">
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <navbar>
+            <div class="nav1" id="navMenu">
+                <a class="a1" href="#intr">HOME</a>
+                <a class="a1" href="#">PROCESS</a>
+                <a class="a1" href="#">CONTACT</a>
+                <a class="a1" href="#">ABOUT ME</a>
+                <button class="BTN">LET'S TALK</button>
+            </div>
+        </navbar>
+    </div>
+
+    <!-- HERO -->
+    <div class="intro" id="intr">
+        <h1 class="bodi">I'm a frontend developer focused on <i class="il">modern UI </i>design and interactive
+            experiences.</h1>
+    </div>
+
+    <!-- CTA ROW -->
+    <div class="vm">
+        <div class="view">
+            <button class="btn1">VIEW PROJECTS <img src="arrow.svg" alt="" class="arrow"></button>
+        </div>
+        <div class="vm1">Crafting interfaces for forward-thinking brands who value depth over density.</div>
+    </div>
+
+    <!-- SELECTED WORK -->
+    <section class="first">
+        <div class="sw">Selected Work</div>
+
+        <!-- Project 1 -->
+        <div class="project-card">
+            <div class="grid">
+                <video class="vid1" src="blood donation.mp4" autoplay loop muted playsinline></video>
+            </div>
+            <div class="ser">
+                <div class="types">HEALTHCARE</div>
+                <div class="types">WEB APP</div>
+            </div>
+            <div class="name">Blood Link</div>
+            <div class="info">A clean and user-friendly UI/UX design for a blood donation platform focused on easy
+                navigation and accessibility.</div>
+        </div>
+
+        <!-- Project 2 -->
+         
+             <div class="project-card">
+            <div class="grid1 grid--dark">
+                <video class="vid1" src="netflix clone (2).mp4" autoplay loop muted playsinline></video>
+            </div>
+            <div class="ser">
+                <div class="types1">ENTERTAINMENT</div>
+                <div class="types1">OTT</div>
+            </div>
+            <div class="name1">Netflix Clone</div>
+            <div class="info1">A visually rich Netflix-inspired UI showcasing smooth layouts, engaging thumbnails, and
+                seamless browsing experience.</div>
+       
+         </div>
+       
+
+    </section>
+   <div class="ttl">
+  <span class="text-left">Trans</span>
+  <img src="right-arrow-send-svgrepo-com.svg" class="rightarr">
+  <span class="text-right">formation</span>
+</div>
+    <div class="trans">
+        
+        <div class="vid2"><video src="before.mp4"  autoplay loop muted playsinline class="ba"></video></div>
+        <div class="vid2"><video src="after.mp4"  autoplay loop muted playsinline class="ba"></video></div>
+    </div>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+            hamburger.classList.toggle('active');
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+gsap.from(".text-left", {
+  x: -100,
+  opacity: 0,
+  duration: 1,
+  ease: "power3.out"
+});
+
+gsap.from(".rightarr", {
+  x: -50,
+  opacity: 0,
+  duration: 0.8,
+  delay: 0.6,
+  ease: "back.out(2)"
+});
+
+gsap.from(".text-right", {
+  x: -100,
+  opacity: 0,
+  duration: 1,
+  delay: 1,
+  ease: "power3.out"
+});
+
+/* 🔥 Arrow continuous animation */
+gsap.to(".rightarr", {
+  x: 10,
+  repeat: -1,
+  yoyo: true,
+  duration: 0.6,
+  ease: "power1.inOut"
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(".ttl", {
+  scrollTrigger: {
+    trigger: ".ttl",
+    start: "top 80%",
+  },
+  x: -150,
+  opacity: 0,
+  duration: 1.2,
+  ease: "power3.out"
+});
+</script>
+</body>
+
+</html>
