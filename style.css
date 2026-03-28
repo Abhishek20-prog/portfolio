@@ -1,3 +1,12 @@
+::selection {
+  background: #c7f731;
+  color: #0a0a0a;
+}
+
+::-moz-selection {
+  background: #c7f731;
+  color: #0a0a0a;
+}
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
