@@ -68,3 +68,55 @@ document.getElementById('formBtn').addEventListener('click', function(){
     btn.style.color      = '';
   }, 3000);
 });
+var video = document.querySelector(".vid-el");
+var playBtn = document.querySelector(".play-btn");
+var muteBtn = document.querySelector(".mute-btn");
+var progressFill = document.querySelector(".progress-fill");
+var progressBar = document.querySelector(".progress-bar");
+
+/* ▶ Play / Pause */
+document.querySelectorAll(".video-wrap").forEach(function(wrapper) {
+
+  var video = wrapper.querySelector(".vid-el");
+  var playBtn = wrapper.querySelector(".play-btn");
+  var muteBtn = wrapper.querySelector(".mute-btn");
+  var progressFill = wrapper.querySelector(".progress-fill");
+  var progressBar = wrapper.querySelector(".progress-bar");
+
+  /* ▶ Play / Pause */
+  playBtn.addEventListener("click", function () {
+    if (video.paused) {
+      video.play();
+      playBtn.textContent = "⏸";
+    } else {
+      video.pause();
+      playBtn.textContent = "▶";
+    }
+  });
+
+  /* 🔊 Mute */
+  muteBtn.addEventListener("click", function () {
+    video.muted = !video.muted;
+    muteBtn.textContent = video.muted ? "🔇" : "🔊";
+  });
+
+  /* 📊 Progress update */
+  video.addEventListener("timeupdate", function () {
+    var percent = (video.currentTime / video.duration) * 100;
+    progressFill.style.width = percent + "%";
+  });
+
+  /* ⏩ Seek */
+  progressBar.addEventListener("click", function (e) {
+    var rect = progressBar.getBoundingClientRect();
+    var clickX = e.clientX - rect.left;
+    var percent = clickX / rect.width;
+    video.currentTime = percent * video.duration;
+  });
+
+  /* 🔥 Click video to play */
+  video.addEventListener("click", function () {
+    playBtn.click();
+  });
+
+});

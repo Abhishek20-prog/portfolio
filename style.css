@@ -236,3 +236,50 @@ footer { border-top: 1px solid var(--border); padding: 32px 40px; display: flex;
   footer { flex-direction: column; gap: 12px; text-align: center; 
   }
 }
+.video-controls {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(10,10,10,0.7);
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Show on hover (IMPORTANT) */
+.video-wrap:hover .video-controls {
+  opacity: 1;
+}
+
+.play-btn, .mute-btn {
+  font-size: 12px;
+  cursor: pointer;
+  color: var(--text);
+  transition: color 0.2s;
+}
+
+.play-btn:hover,
+.mute-btn:hover {
+  color: var(--accent);
+}
+
+/* Progress bar */
+.progress-bar {
+  flex: 1;
+  height: 2px;
+  background: var(--border);
+  position: relative;
+  cursor: pointer;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+}
